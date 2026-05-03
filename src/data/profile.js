@@ -16,7 +16,7 @@ export const profile = {
   email: 'rishabh@tnbg.co.in',
   phone: '+91 8741814358',
   address: [
-    '240, Gujro Ka Mohalla',
+    '249, Gujro Ka Mohalla',
     'Near Laxminarayan Temple',
     'Nimoda Hiriji, Tehsil Digod',
     'Kota, Rajasthan 325201',
