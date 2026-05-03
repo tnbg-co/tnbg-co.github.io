@@ -18,7 +18,7 @@ export const profile = {
   address: [
     '249, Gujro Ka Mohalla',
     'Near Laxminarayan Temple',
-    'Nimoda Hiriji, Tehsil Digod',
+    'Nimoda Hariji, Tehsil Digod',
     'Kota, Rajasthan 325201',
   ],
   education:
