@@ -1,94 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TNBG</title>
-
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            overflow: hidden;
-        }
-
-        .text {
-            font-size: 12vw;
-            font-weight: 600;
-            letter-spacing: -0.05em;
-            color: #111;
-            opacity: 0;
-            transform: scale(0.9) translateY(40px);
-            animation: fadeIn 1.5s ease forwards;
-        }
-
-        .text span {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(40px);
-            animation: letterIn 1s ease forwards;
-        }
-
-        .text span:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .text span:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        .text span:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-
-        .text span:nth-child(4) {
-            animation-delay: 0.8s;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-
-        @keyframes letterIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* subtle breathing effect */
-        @keyframes breathe {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.02);
-            }
-        }
-
-        .text {
-            animation: fadeIn 1.5s ease forwards, breathe 6s ease-in-out infinite;
-            animation-delay: 0s, 2s;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Rishabh Dubey is a project engineer and consultant specializing in industrial automation, instrumentation, robotics, object detection, and technical project consulting." />
+    <meta name="keywords"
+        content="Rishabh Dubey, industrial automation consultant, instrumentation engineer, robotics consultant, object detection, ABB Global" />
+    <meta name="author" content="Rishabh Dubey" />
+    <meta property="og:title" content="Rishabh Dubey | Industrial Automation Consultant" />
+    <meta property="og:description"
+        content="Professional consultant profile for robotics, instrumentation, AI integration, troubleshooting, and industrial automation projects." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tnbg.co.in" />
+    <meta property="og:image" content="/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rishabh Dubey | Industrial Automation Consultant" />
+    <meta name="twitter:description"
+        content="Industrial automation, instrumentation, robotics, AI integration, and technical project consulting." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <title>Rishabh Dubey | Industrial Automation Consultant</title>
 </head>
 
 <body>
-    <div class="text">
-        <span>T</span><span>N</span><span>B</span><span>G</span>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>
