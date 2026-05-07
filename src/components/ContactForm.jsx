@@ -1,66 +1,33 @@
-import emailjs from '@emailjs/browser';
-import { Loader2, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { useState } from 'react';
 import SectionHeader from './SectionHeader.jsx';
-import { contactDetails, profile } from '../data/profile.js';
+import { contactDetails } from '../data/profile.js';
+
+const RECIPIENT_EMAIL = 'rishabh@tnbg.co.in';
 
 const initialForm = {
   name: '',
-  email: '',
+  phone: '',
   message: '',
 };
 
 function ContactForm() {
   const [form, setForm] = useState(initialForm);
-  const [status, setStatus] = useState({ type: 'idle', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setForm((current) => ({ ...current, [name]: value }));
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    setStatus({ type: 'idle', message: '' });
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const subject = encodeURIComponent(`Message from ${form.name}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nPhone: ${form.phone}\n\n${form.message}`,
+    );
 
-    if (!serviceId || !templateId || !publicKey) {
-      setStatus({
-        type: 'error',
-        message: 'Email service is not configured yet. Please email rishabh@tnbg.co.in directly.',
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: form.name,
-          from_email: form.email,
-          message: form.message,
-          to_email: profile.email,
-        },
-        { publicKey },
-      );
-
-      setForm(initialForm);
-      setStatus({ type: 'success', message: 'Thank you. Your message has been sent successfully.' });
-    } catch (error) {
-      setStatus({
-        type: 'error',
-        message: error?.text || 'Unable to send the message right now. Please try again or email directly.',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    window.location.href = `mailto:${RECIPIENT_EMAIL}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -117,15 +84,14 @@ function ContactForm() {
             </label>
 
             <label className="field-label">
-              Email
+              Phone
               <input
-                required
-                type="email"
-                name="email"
-                value={form.email}
+                type="tel"
+                name="phone"
+                value={form.phone}
                 onChange={handleChange}
                 className="field-input"
-                placeholder="you@example.com"
+                placeholder="+91 98765 43210"
               />
             </label>
 
@@ -142,22 +108,9 @@ function ContactForm() {
             </label>
           </div>
 
-          {status.message && (
-            <div
-              className={`mt-5 rounded-lg border px-4 py-3 text-sm ${
-                status.type === 'success'
-                  ? 'border-emerald-200 bg-emerald-50 text-emerald-800'
-                  : 'border-red-200 bg-red-50 text-red-800'
-              }`}
-              role="status"
-            >
-              {status.message}
-            </div>
-          )}
-
-          <button type="submit" className="btn-primary mt-6 w-full justify-center" disabled={isSubmitting}>
-            {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
-            {isSubmitting ? 'Sending...' : 'Send Message'}
+          <button type="submit" className="btn-primary mt-6 w-full justify-center">
+            <Send className="h-4 w-4" />
+            Send Message
           </button>
         </form>
       </div>

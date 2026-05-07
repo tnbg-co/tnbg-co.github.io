@@ -7,12 +7,10 @@ function Footer() {
       <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:px-6 md:grid-cols-[1.3fr_1fr] lg:px-8">
         <div>
           <Link to="/" className="inline-flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center rounded-lg bg-slate-950 text-sm font-bold text-white">
-              RD
-            </span>
+            <img src="/logo.png" alt="The Nagendra Bala Group" className="h-10 w-10 rounded-lg" />
             <span>
-              <span className="block font-semibold text-slate-950">{profile.name}</span>
-              <span className="block text-sm text-slate-500">Industrial automation and robotics consulting</span>
+              <span className="block font-semibold text-slate-950">The Nagendra Bala Group</span>
+              <span className="block text-sm text-slate-500">Industrial Automation & IoT Consulting</span>
             </span>
           </Link>
           <p className="mt-5 max-w-xl text-sm leading-6 text-slate-600">
@@ -44,7 +42,7 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-slate-100 px-5 py-5 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} Rishabh Dubey. All rights reserved.
+        © {new Date().getFullYear()} The Nagendra Bala Group. All rights reserved.
       </div>
     </footer>
   );

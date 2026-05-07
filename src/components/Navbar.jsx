@@ -18,12 +18,10 @@ function Navbar() {
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
         <Link to="/" onClick={closeMenu} className="flex items-center gap-3" aria-label="Rishabh Dubey home">
-          <span className="grid h-10 w-10 place-items-center rounded-lg bg-slate-950 text-sm font-bold text-white shadow-sm">
-            RD
-          </span>
+          <img src="/logo.png" alt="The Nagendra Bala Group" className="h-10 w-10 rounded-lg" />
           <span className="leading-tight">
-            <span className="block text-sm font-semibold text-slate-950">Rishabh Dubey</span>
-            <span className="block text-xs text-slate-500">Engineering Consultant</span>
+            <span className="block text-sm font-semibold text-slate-950">The Nagendra Bala Group</span>
+            <span className="block text-xs text-slate-500">Industrial Automation & IoT Consulting</span>
           </span>
         </Link>
 
@@ -33,17 +31,13 @@ function Navbar() {
               key={item.path}
               to={item.path}
               className={({ isActive }) =>
-                `text-sm font-medium transition-colors hover:text-sky-700 ${
-                  isActive ? 'text-sky-700' : 'text-slate-600'
+                `text-sm font-medium transition-colors hover:text-sky-700 ${isActive ? 'text-sky-700' : 'text-slate-600'
                 }`
               }
             >
               {item.label}
             </NavLink>
           ))}
-          <Link to="/contact" className="btn-primary">
-            Contact Me
-          </Link>
         </div>
 
         <button
@@ -66,8 +60,7 @@ function Navbar() {
                 to={item.path}
                 onClick={closeMenu}
                 className={({ isActive }) =>
-                  `rounded-lg px-3 py-3 text-sm font-medium ${
-                    isActive ? 'bg-sky-50 text-sky-800' : 'text-slate-700 hover:bg-slate-50'
+                  `rounded-lg px-3 py-3 text-sm font-medium ${isActive ? 'bg-sky-50 text-sky-800' : 'text-slate-700 hover:bg-slate-50'
                   }`
                 }
               >

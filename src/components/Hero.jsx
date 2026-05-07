@@ -1,6 +1,8 @@
 import { ArrowRight, CheckCircle2, CircuitBoard, Cpu, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { expertise, profile } from '../data/profile.js';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 function Hero() {
   return (
@@ -8,9 +10,6 @@ function Hero() {
       <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-sky-50 to-transparent" aria-hidden="true" />
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <div className="animate-fade-up">
-          <p className="inline-flex rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-medium text-sky-800">
-            Available for technical consulting and project support
-          </p>
           <h1 className="mt-7 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-6xl">
             {profile.name}
           </h1>
@@ -21,10 +20,10 @@ function Hero() {
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link to="/contact" className="btn-primary">
-              Contact Me
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+            <a href="https://wa.me/918741814358" className="btn-secondary" style={{ borderColor: '#128C7E', color: '#128C7E' }}>
+              <FontAwesomeIcon icon={faWhatsapp} />
+              Chat on WhatsApp
+            </a>
             <Link to="/services" className="btn-secondary">
               View Services
             </Link>
@@ -41,34 +40,41 @@ function Hero() {
         </div>
 
         <div className="animate-fade-up animation-delay-150">
-          <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 p-6 shadow-2xl shadow-slate-200">
-            <div className="absolute inset-0 opacity-30" aria-hidden="true">
-              <div className="h-full w-full bg-[linear-gradient(135deg,rgba(56,189,248,0.22),transparent_38%),radial-gradient(circle_at_70%_20%,rgba(249,115,22,0.18),transparent_28%)]" />
+          <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 p-6 shadow-xl">
+            <div
+              className="absolute inset-0 opacity-30"
+              aria-hidden="true"
+            >
+              <div className="h-full w-full bg-[linear-gradient(135deg,rgba(56,189,248,0.18),transparent_40%),radial-gradient(circle_at_80%_20%,rgba(249,115,22,0.14),transparent_30%)]" />
             </div>
-            <div className="relative">
-              <div className="grid grid-cols-3 gap-3">
-                {[CircuitBoard, Cpu, ShieldCheck].map((Icon, index) => (
-                  <div key={index} className="rounded-xl border border-white/10 bg-white/10 p-4 text-white">
-                    <Icon className="h-6 w-6 text-sky-300" />
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 rounded-xl border border-white/10 bg-white/10 p-5">
-                <p className="text-sm font-medium text-sky-200">Current Focus</p>
-                <p className="mt-3 text-2xl font-semibold text-white">Robotics and object detection initiatives</p>
-                <p className="mt-4 leading-7 text-slate-300">
-                  Combining field engineering experience with applied AI methods to deliver reliable, efficient
-                  industrial solutions.
+
+            <div className="relative space-y-4">
+              <div className="rounded-xl border border-white/10 bg-white/10 p-5 backdrop-blur">
+                <p className="text-sm text-sky-200">Current Focus</p>
+
+                <h3 className="mt-2 text-2xl font-semibold text-white">
+                  PLC & Automation
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-slate-300">
+                  Building reliable industrial automation systems.
                 </p>
               </div>
-              <div className="mt-5 grid grid-cols-2 gap-4">
-                <div className="rounded-xl bg-white p-4">
-                  <p className="text-3xl font-semibold text-slate-950">5+</p>
-                  <p className="mt-1 text-sm text-slate-600">Years engineering exposure</p>
+
+              <div className="grid grid-cols-3 gap-3">
+                <div className="rounded-xl bg-white p-4 text-center">
+                  <p className="text-2xl font-bold text-slate-950">5+</p>
+                  <p className="text-xs text-slate-500">Years</p>
                 </div>
-                <div className="rounded-xl bg-white p-4">
-                  <p className="text-3xl font-semibold text-slate-950">6</p>
-                  <p className="mt-1 text-sm text-slate-600">Focused service areas</p>
+
+                <div className="rounded-xl bg-white p-4 text-center">
+                  <p className="text-2xl font-bold text-slate-950">6</p>
+                  <p className="text-xs text-slate-500">Services</p>
+                </div>
+
+                <div className="rounded-xl bg-white p-4 text-center">
+                  <p className="text-2xl font-bold text-slate-950">5+</p>
+                  <p className="text-xs text-slate-500">Projects Delivered</p>
                 </div>
               </div>
             </div>

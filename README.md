@@ -1,4 +1,4 @@
-# Rishabh Dubey Consultant Profile
+# Rishabh Dubey's Consultant Profile
 
 Modern Vite + React website for a professional engineering consultant profile. The site is responsive, SEO-ready, and configured for GitHub Pages deployment.
 
