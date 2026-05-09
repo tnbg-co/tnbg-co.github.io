@@ -17,7 +17,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: #f8fafc;
+  background: #e9eef6;
 }
 
 button,
@@ -37,31 +37,35 @@ textarea:focus-visible {
 
 @layer components {
   .section-padding {
-    @apply py-16 sm:py-20 lg:py-24;
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+
+  .scroll-section {
+    scroll-margin-top: 7.5rem;
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-lg bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-sky-800 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0;
+    @apply inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 px-5 py-3 text-sm font-semibold text-slate-100 shadow-2xl shadow-indigo-950/20 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:from-slate-900 hover:via-indigo-950 hover:to-slate-950 hover:shadow-indigo-500/15 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition duration-200 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-50;
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-white/50 bg-slate-50/55 px-5 py-3 text-sm font-semibold text-slate-800 shadow-xl shadow-indigo-950/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-100/80 hover:bg-slate-50/80 hover:shadow-indigo-500/10;
   }
 
   .btn-light {
-    @apply inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 text-sm font-semibold text-slate-950 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-sky-50;
+    @apply inline-flex items-center justify-center rounded-2xl border border-white/40 bg-slate-100/85 px-5 py-3 text-sm font-semibold text-slate-900 shadow-2xl shadow-indigo-950/15 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-50/95 hover:shadow-blue-500/15;
   }
 
   .card {
-    @apply rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-sky-200 hover:shadow-lg hover:shadow-slate-200/70;
+    @apply rounded-3xl border border-white/50 bg-slate-50/55 p-6 shadow-2xl shadow-indigo-950/10 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-blue-100/80 hover:bg-slate-50/75 hover:shadow-indigo-500/10;
   }
 
   .tag {
-    @apply rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600;
+    @apply rounded-full border border-blue-100/50 bg-slate-50/55 px-3 py-1 text-xs font-medium text-slate-600 shadow-sm shadow-indigo-950/5 backdrop-blur-xl;
   }
 
   .timeline-card {
-    @apply grid gap-5 rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm md:grid-cols-[auto_1fr] md:p-6;
+    @apply grid gap-5 rounded-3xl border border-white/50 bg-slate-50/55 p-5 shadow-2xl shadow-indigo-950/10 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-blue-100/80 hover:bg-slate-50/75 hover:shadow-indigo-500/10 md:grid-cols-[auto_1fr] md:p-6;
   }
 
   .field-label {
@@ -69,15 +73,23 @@ textarea:focus-visible {
   }
 
   .field-input {
-    @apply w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-100;
+    @apply w-full rounded-2xl border border-white/50 bg-slate-50/55 px-4 py-3 text-sm font-medium text-slate-900 shadow-inner shadow-white/20 backdrop-blur-xl transition-all duration-300 placeholder:text-slate-400 focus:border-blue-300/70 focus:bg-slate-50/80 focus:outline-none focus:ring-4 focus:ring-indigo-200/40;
   }
 
   .contact-row {
-    @apply flex gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-sky-200 hover:shadow-md;
+    @apply flex gap-4 rounded-2xl border border-white/50 bg-slate-50/55 p-4 shadow-xl shadow-indigo-950/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-100/80 hover:bg-slate-50/75 hover:shadow-indigo-500/10;
   }
 
   .page-loader {
     @apply grid min-h-screen place-items-center bg-slate-50 text-sm font-semibold text-slate-600;
+  }
+
+  .glass-panel {
+    @apply rounded-3xl border border-white/50 bg-slate-50/55 shadow-2xl shadow-indigo-950/10 backdrop-blur-2xl;
+  }
+
+  .soft-icon {
+    @apply flex items-center justify-center rounded-2xl border border-blue-100/60 bg-blue-50/55 text-blue-700 shadow-lg shadow-indigo-950/5 backdrop-blur-xl;
   }
 }
 
@@ -93,9 +105,52 @@ textarea:focus-visible {
   }
 }
 
-.animate-fade-up,
-.animate-on-scroll {
+.animate-fade-up {
   animation: fade-up 0.7s ease both;
+}
+
+.animate-on-scroll,
+.reveal-on-scroll {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(26px);
+  transition:
+    opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 900ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 700ms ease-out,
+    border-color 700ms ease-out,
+    background-color 700ms ease-out;
+  will-change: opacity, filter, transform;
+}
+
+.animate-on-scroll.is-visible,
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.reveal-stagger > .animate-on-scroll:nth-child(2),
+.reveal-stagger > .contact-row:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+.reveal-stagger > .animate-on-scroll:nth-child(3),
+.reveal-stagger > .contact-row:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.reveal-stagger > .animate-on-scroll:nth-child(4) {
+  transition-delay: 270ms;
+}
+
+.reveal-stagger > .animate-on-scroll:nth-child(5) {
+  transition-delay: 360ms;
+}
+
+.reveal-stagger > .animate-on-scroll:nth-child(6) {
+  transition-delay: 450ms;
 }
 
 .animation-delay-150 {
@@ -114,5 +169,12 @@ textarea:focus-visible {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .animate-on-scroll,
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
   }
 }

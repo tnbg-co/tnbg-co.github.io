@@ -31,7 +31,7 @@ function ContactForm() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-white">
+    <section id="contact" className="scroll-section section-padding">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <SectionHeader
@@ -40,27 +40,27 @@ function ContactForm() {
             description="Share the context and preferred next step. Rishabh can support automation, instrumentation, robotics, troubleshooting, and technical project work."
           />
 
-          <div className="mt-8 grid gap-4">
+          <div className="reveal-stagger mt-8 grid gap-4">
             {contactDetails.map((detail) => {
               const Icon = detail.icon;
               const content = (
                 <>
-                  <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-sky-50 text-sky-700">
+                  <span className="soft-icon h-11 w-11 shrink-0">
                     <Icon className="h-5 w-5" />
                   </span>
                   <span>
-                    <span className="block text-sm font-semibold text-slate-950">{detail.label}</span>
+                    <span className="block text-sm font-semibold text-slate-900">{detail.label}</span>
                     <span className="mt-1 block text-sm leading-6 text-slate-600">{detail.value}</span>
                   </span>
                 </>
               );
 
               return detail.href ? (
-                <a key={detail.label} href={detail.href} className="contact-row">
+                <a key={detail.label} href={detail.href} className="contact-row animate-on-scroll">
                   {content}
                 </a>
               ) : (
-                <div key={detail.label} className="contact-row">
+                <div key={detail.label} className="contact-row animate-on-scroll">
                   {content}
                 </div>
               );
@@ -68,7 +68,7 @@ function ContactForm() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm sm:p-8">
+        <form onSubmit={handleSubmit} className="glass-panel reveal-on-scroll p-5 sm:p-8">
           <div className="grid gap-5">
             <label className="field-label">
               Name
