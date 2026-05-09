@@ -96,7 +96,7 @@ textarea:focus-visible {
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(10px);
   }
 
   to {
@@ -106,51 +106,48 @@ textarea:focus-visible {
 }
 
 .animate-fade-up {
-  animation: fade-up 0.7s ease both;
+  animation: fade-up 0.36s ease-out both;
 }
 
 .animate-on-scroll,
 .reveal-on-scroll {
   opacity: 0;
-  filter: blur(10px);
-  transform: translateY(26px);
+  transform: translateY(0.5rem);
   transition:
-    opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
-    filter 900ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 900ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 700ms ease-out,
-    border-color 700ms ease-out,
-    background-color 700ms ease-out;
-  will-change: opacity, filter, transform;
+    opacity 300ms ease-out,
+    transform 300ms ease-out,
+    box-shadow 300ms ease-out,
+    border-color 300ms ease-out,
+    background-color 300ms ease-out;
+  will-change: opacity, transform;
 }
 
 .animate-on-scroll.is-visible,
 .reveal-on-scroll.is-visible {
   opacity: 1;
-  filter: blur(0);
   transform: translateY(0);
 }
 
 .reveal-stagger > .animate-on-scroll:nth-child(2),
 .reveal-stagger > .contact-row:nth-child(2) {
-  transition-delay: 90ms;
+  transition-delay: 40ms;
 }
 
 .reveal-stagger > .animate-on-scroll:nth-child(3),
 .reveal-stagger > .contact-row:nth-child(3) {
-  transition-delay: 180ms;
+  transition-delay: 80ms;
 }
 
 .reveal-stagger > .animate-on-scroll:nth-child(4) {
-  transition-delay: 270ms;
+  transition-delay: 120ms;
 }
 
 .reveal-stagger > .animate-on-scroll:nth-child(5) {
-  transition-delay: 360ms;
+  transition-delay: 160ms;
 }
 
 .reveal-stagger > .animate-on-scroll:nth-child(6) {
-  transition-delay: 450ms;
+  transition-delay: 200ms;
 }
 
 .animation-delay-150 {
@@ -174,7 +171,6 @@ textarea:focus-visible {
   .animate-on-scroll,
   .reveal-on-scroll {
     opacity: 1 !important;
-    filter: none !important;
     transform: none !important;
   }
 }

@@ -53,9 +53,9 @@ function Navbar() {
   }, [hash, pathname]);
 
   return (
-    <header className="sticky top-0 z-50 px-3 py-3 transition-all duration-700 ease-out sm:px-5">
+    <header className="sticky top-0 z-50 px-3 py-3 transition-all duration-300 ease-out sm:px-5">
       <nav
-        className={`mx-auto flex max-w-7xl items-center justify-between rounded-3xl border border-white/50 px-4 py-3 backdrop-blur-2xl transition-all duration-700 ease-out sm:px-5 lg:px-6 ${
+        className={`mx-auto flex max-w-7xl items-center justify-between rounded-3xl border border-white/50 px-4 py-3 backdrop-blur-2xl transition-all duration-300 ease-out sm:px-5 lg:px-6 ${
           isScrolled
             ? 'bg-slate-50/70 shadow-2xl shadow-indigo-950/15'
             : 'bg-slate-50/55 shadow-xl shadow-indigo-950/5'
@@ -78,7 +78,7 @@ function Navbar() {
                 setActiveSection(item.id);
                 closeMenu();
               }}
-              className={`rounded-xl px-4 py-2 text-sm font-medium transition-all duration-500 ease-out hover:bg-slate-50/70 hover:text-slate-900 ${
+              className={`rounded-xl px-4 py-2 text-sm font-medium transition-all duration-300 ease-out hover:bg-slate-50/70 hover:text-slate-900 ${
                 activeSection === item.id
                   ? 'bg-slate-50/80 text-slate-900 shadow-lg shadow-indigo-950/5'
                   : 'text-slate-600'
@@ -111,7 +111,7 @@ function Navbar() {
                   setActiveSection(item.id);
                   closeMenu();
                 }}
-                className={`rounded-2xl px-3 py-3 text-sm font-medium transition-all duration-500 ease-out ${
+                className={`rounded-2xl px-3 py-3 text-sm font-medium transition-all duration-300 ease-out ${
                   activeSection === item.id
                     ? 'bg-slate-50 text-slate-900 shadow-lg shadow-indigo-950/5'
                     : 'text-slate-700 hover:bg-slate-50/70'

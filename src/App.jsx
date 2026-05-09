@@ -6,7 +6,7 @@ import Navbar from './components/Navbar.jsx';
 const easeInOutCubic = (progress) =>
   progress < 0.5 ? 4 * progress * progress * progress : 1 - Math.pow(-2 * progress + 2, 3) / 2;
 
-const scrollToTarget = (target, duration = 900) => {
+const scrollToTarget = (target, duration = 520) => {
   if (!target) return;
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -68,7 +68,7 @@ function App() {
           }
         });
       },
-      { rootMargin: '0px 0px -14% 0px', threshold: 0.16 },
+      { rootMargin: '0px 0px -6% 0px', threshold: 0.08 },
     );
 
     revealItems.forEach((item) => observer.observe(item));
