@@ -77,13 +77,13 @@ function App() {
   }, [pathname]);
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[linear-gradient(145deg,#f7f9fc_0%,#e7edf6_38%,#f4f1eb_100%)] text-slate-900">
+    <div className="relative min-h-screen overflow-hidden bg-[linear-gradient(145deg,#f2fbff_0%,#e0f7fa_28%,#e3f2fd_58%,#fff8e1_100%)] text-slate-900">
       <div
-        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_18%_8%,rgba(147,197,253,0.28),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(199,210,254,0.24),transparent_28%),radial-gradient(circle_at_56%_88%,rgba(226,232,240,0.72),transparent_34%)]"
+        className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(120deg,rgba(3,169,244,0.16)_0%,transparent_38%),linear-gradient(300deg,rgba(255,193,7,0.16)_0%,transparent_34%),linear-gradient(180deg,rgba(0,150,136,0.08),transparent_52%)]"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.74),rgba(219,234,254,0.18)_42%,rgba(241,245,249,0.64))]"
+        className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.56),rgba(224,247,250,0.24)_46%,rgba(255,248,225,0.38))]"
         aria-hidden="true"
       />
       <Navbar />

@@ -16,7 +16,7 @@ function ExperienceTimeline() {
           {experience.map((item, index) => (
             <article key={`${item.company}-${item.period}`} className="timeline-card animate-on-scroll">
               <div className="hidden md:block">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/15 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-slate-100 shadow-xl shadow-indigo-950/20 backdrop-blur-xl">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/70 bg-gradient-to-br from-sky-500 via-cyan-500 to-teal-500 text-white shadow-xl shadow-cyan-500/25 backdrop-blur-xl">
                   <BriefcaseBusiness className="h-5 w-5" />
                 </div>
               </div>

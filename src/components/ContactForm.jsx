@@ -31,7 +31,7 @@ function ContactForm() {
   };
 
   return (
-    <section id="contact" className="scroll-section section-padding">
+    <section id="contact" className="scroll-section">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <SectionHeader

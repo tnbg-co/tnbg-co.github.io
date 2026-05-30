@@ -18,7 +18,7 @@ function ServicesGrid({ compact = false }) {
             const Icon = service.icon;
             return (
               <article key={service.title} className="card group animate-on-scroll">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/15 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-slate-100 shadow-xl shadow-indigo-950/20 backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-0.5 group-hover:from-slate-900 group-hover:via-indigo-950 group-hover:to-slate-950 group-hover:shadow-indigo-500/15">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/70 bg-gradient-to-br from-sky-500 via-cyan-500 to-teal-500 text-white shadow-xl shadow-cyan-500/25 backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-0.5 group-hover:from-sky-400 group-hover:via-cyan-500 group-hover:to-teal-400 group-hover:shadow-teal-500/25">
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-slate-900">{service.title}</h3>
